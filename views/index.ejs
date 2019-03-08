@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/materialize.min.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="/javascripts/vue.js"></script>
+  </head>
+  <body>
+    <script type="text/x-template" id="grid-template">
+      <table class="centered highlight responsive-table">
+        <thead>
+          <tr>
+            <th v-for="key in columns"
+              @click="sortBy(key)"
+              :class="{ active: sortKey == key }">
+              {{ key | capitalize }}
+              <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'">
+              </span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="entry in filteredData">
+            <td v-for="key in columns">
+              {{entry[key]}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </script>
+
+    <div class="container">
+      <div id="customers">
+        <form id="search">
+          Search <input name="query" v-model="searchQuery">
+        </form>
+        <table-grid
+          :data="gridData"
+          :columns="gridColumns"
+          :filter-key="searchQuery">
+        </table-grid>
+      </div>
+      <ul id="pagination" class="pagination">
+          <li class="waves-effect"><a v-on:click="prevPage" href="#pagination"><i class="material-icons">chevron_left</i></a></li>
+          <li v-for="(item, index) in items" v-bind:class="{'active': item.isActive}" v-on:click="activePage(index)" class="waves-effect"><a href="#pagination">{{index + 1}}</a></li>
+          <li class="waves-effect"><a v-on:click="nextPage" href="#pagination"><i class="material-icons">chevron_right</i></a></li>
+      </ul>
+    </div>
+
+    <script>
+      Vue.component('table-grid', {
+        template: '#grid-template',
+        props: {
+          data: Array,
+          columns: Array,
+          filterKey: String
+        },
+        data: function () {
+          var sortOrders = {}
+          this.columns.forEach(function (key) {
+            sortOrders[key] = 1
+          })
+          return {
+            sortKey: '',
+            sortOrders: sortOrders
+          }
+        },
+        computed: {
+          filteredData: function () {
+            var sortKey = this.sortKey
+            var filterKey = this.filterKey && this.filterKey.toLowerCase()
+            var order = this.sortOrders[sortKey] || 1
+            var data = this.data
+            if (filterKey) {
+              data = data.filter(function (row) {
+                return Object.keys(row).some(function (key) {
+                  return String(row[key]).toLowerCase().indexOf(filterKey) > -1
+                })
+              })
+            }
+            if (sortKey) {
+              data = data.slice().sort(function (a, b) {
+                a = a[sortKey]
+                b = b[sortKey]
+                return (a === b ? 0 : a > b ? 1 : -1) * order
+              })
+            }
+            return data
+          }
+        },
+        filters: {
+          capitalize: function (str) {
+            return str.charAt(0).toUpperCase() + str.slice(1)
+          }
+        },
+        methods: {
+          sortBy: function (key) {
+            this.sortKey = key
+            this.sortOrders[key] = this.sortOrders[key] * -1
+          }
+        }
+      })
+
+      const request = async () => {
+        v1 = new Vue({
+          el: '#customers',
+          data: {
+            searchQuery: '',
+            gridColumns: ['Name', 'Title', 'Country'],
+            gridData: []
+          }
+        });
+
+        v2 = new Vue({
+          el: '#pagination',
+          data: {
+            items: []
+          },
+          mounted: function() {
+            this.totalCustomers();
+          },
+          methods: {
+            activePage: function(index) {
+              this.items[index].isActive = true;
+              for(let i=0; i<this.items.length; i++)
+                  if(i != index)
+                      this.items[i].isActive = false;
+              this.requestData(index + 1);
+            },
+            nextPage: function() {
+              for(let i=0; i<this.items.length; i++) {
+                  if(this.items[i].isActive == true) {
+                      this.items[i].isActive = false;
+                      try {
+                        this.items[i+1].isActive = true;
+                        this.requestData(i+2);
+                      }
+                      catch {
+                        this.items[0].isActive = true;
+                        this.requestData(1);
+                      }
+                      break;
+                  }
+              }
+            },
+            prevPage: function() {
+              for(let i=0; i<this.items.length; i++) {
+                  if(this.items[i].isActive == true) {
+                      this.items[i].isActive = false;
+                      try {
+                        this.items[i-1].isActive = true;
+                        this.requestData(i);
+                      }
+                      catch {
+                        this.items[this.items.length-1].isActive = true;
+                        this.requestData(this.items.length);
+                      }
+                      break;
+                  }
+              }
+            },
+            requestData: async function(page) {
+              let response = await fetch('/customers/' + page),
+                  json = await response.json();
+
+              v1.gridData = json;
+            },
+            totalCustomers: async function(page) {
+              let response = await fetch('/total-customers'),
+                  json = await response.json();
+
+              for(let i=0; i<parseInt(json, 10); i++)
+                this.items.push({ isActive: false });
+
+              this.activePage(0);
+            }
+          }
+        });
+      }
+
+      request();
+      
+    </script>
+  </body>
+</html>

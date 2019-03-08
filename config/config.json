@@ -1,0 +1,14 @@
+{
+  "development": {
+    "dialect": "sqlite",
+    "storage": "./northwind.db"
+  },
+  "test": {
+    "dialect": "sqlite",
+    "storage": "./northwind.db"
+  },
+  "production": {
+    "dialect": "sqlite",
+    "storage": "./northwind.db"
+  }
+}

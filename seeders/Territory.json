@@ -1,0 +1,267 @@
+[
+    {
+        "Id": "01581",
+        "RegionId": "1",
+        "TerritoryDescription": "Westboro"
+    },
+    {
+        "Id": "01730",
+        "RegionId": "1",
+        "TerritoryDescription": "Bedford"
+    },
+    {
+        "Id": "01833",
+        "RegionId": "1",
+        "TerritoryDescription": "Georgetow"
+    },
+    {
+        "Id": "02116",
+        "RegionId": "1",
+        "TerritoryDescription": "Boston"
+    },
+    {
+        "Id": "02139",
+        "RegionId": "1",
+        "TerritoryDescription": "Cambridge"
+    },
+    {
+        "Id": "02184",
+        "RegionId": "1",
+        "TerritoryDescription": "Braintree"
+    },
+    {
+        "Id": "02903",
+        "RegionId": "1",
+        "TerritoryDescription": "Providence"
+    },
+    {
+        "Id": "03049",
+        "RegionId": "3",
+        "TerritoryDescription": "Hollis"
+    },
+    {
+        "Id": "03801",
+        "RegionId": "3",
+        "TerritoryDescription": "Portsmouth"
+    },
+    {
+        "Id": "06897",
+        "RegionId": "1",
+        "TerritoryDescription": "Wilton"
+    },
+    {
+        "Id": "07960",
+        "RegionId": "1",
+        "TerritoryDescription": "Morristown"
+    },
+    {
+        "Id": "08837",
+        "RegionId": "1",
+        "TerritoryDescription": "Edison"
+    },
+    {
+        "Id": "10019",
+        "RegionId": "1",
+        "TerritoryDescription": "New York"
+    },
+    {
+        "Id": "10038",
+        "RegionId": "1",
+        "TerritoryDescription": "New York"
+    },
+    {
+        "Id": "11747",
+        "RegionId": "1",
+        "TerritoryDescription": "Mellvile"
+    },
+    {
+        "Id": "14450",
+        "RegionId": "1",
+        "TerritoryDescription": "Fairport"
+    },
+    {
+        "Id": "19428",
+        "RegionId": "3",
+        "TerritoryDescription": "Philadelphia"
+    },
+    {
+        "Id": "19713",
+        "RegionId": "1",
+        "TerritoryDescription": "Neward"
+    },
+    {
+        "Id": "20852",
+        "RegionId": "1",
+        "TerritoryDescription": "Rockville"
+    },
+    {
+        "Id": "27403",
+        "RegionId": "1",
+        "TerritoryDescription": "Greensboro"
+    },
+    {
+        "Id": "27511",
+        "RegionId": "1",
+        "TerritoryDescription": "Cary"
+    },
+    {
+        "Id": "29202",
+        "RegionId": "4",
+        "TerritoryDescription": "Columbia"
+    },
+    {
+        "Id": "30346",
+        "RegionId": "4",
+        "TerritoryDescription": "Atlanta"
+    },
+    {
+        "Id": "31406",
+        "RegionId": "4",
+        "TerritoryDescription": "Savannah"
+    },
+    {
+        "Id": "32859",
+        "RegionId": "4",
+        "TerritoryDescription": "Orlando"
+    },
+    {
+        "Id": "33607",
+        "RegionId": "4",
+        "TerritoryDescription": "Tampa"
+    },
+    {
+        "Id": "40222",
+        "RegionId": "1",
+        "TerritoryDescription": "Louisville"
+    },
+    {
+        "Id": "44122",
+        "RegionId": "3",
+        "TerritoryDescription": "Beachwood"
+    },
+    {
+        "Id": "45839",
+        "RegionId": "3",
+        "TerritoryDescription": "Findlay"
+    },
+    {
+        "Id": "48075",
+        "RegionId": "3",
+        "TerritoryDescription": "Southfield"
+    },
+    {
+        "Id": "48084",
+        "RegionId": "3",
+        "TerritoryDescription": "Troy"
+    },
+    {
+        "Id": "48304",
+        "RegionId": "3",
+        "TerritoryDescription": "Bloomfield Hills"
+    },
+    {
+        "Id": "53404",
+        "RegionId": "3",
+        "TerritoryDescription": "Racine"
+    },
+    {
+        "Id": "55113",
+        "RegionId": "3",
+        "TerritoryDescription": "Roseville"
+    },
+    {
+        "Id": "55439",
+        "RegionId": "3",
+        "TerritoryDescription": "Minneapolis"
+    },
+    {
+        "Id": "60179",
+        "RegionId": "2",
+        "TerritoryDescription": "Hoffman Estates"
+    },
+    {
+        "Id": "60601",
+        "RegionId": "2",
+        "TerritoryDescription": "Chicago"
+    },
+    {
+        "Id": "72716",
+        "RegionId": "4",
+        "TerritoryDescription": "Bentonville"
+    },
+    {
+        "Id": "75234",
+        "RegionId": "4",
+        "TerritoryDescription": "Dallas"
+    },
+    {
+        "Id": "78759",
+        "RegionId": "4",
+        "TerritoryDescription": "Austin"
+    },
+    {
+        "Id": "80202",
+        "RegionId": "2",
+        "TerritoryDescription": "Denver"
+    },
+    {
+        "Id": "80909",
+        "RegionId": "2",
+        "TerritoryDescription": "Colorado Springs"
+    },
+    {
+        "Id": "85014",
+        "RegionId": "2",
+        "TerritoryDescription": "Phoenix"
+    },
+    {
+        "Id": "85251",
+        "RegionId": "2",
+        "TerritoryDescription": "Scottsdale"
+    },
+    {
+        "Id": "90405",
+        "RegionId": "2",
+        "TerritoryDescription": "Santa Monica"
+    },
+    {
+        "Id": "94025",
+        "RegionId": "2",
+        "TerritoryDescription": "Menlo Park"
+    },
+    {
+        "Id": "94105",
+        "RegionId": "2",
+        "TerritoryDescription": "San Francisco"
+    },
+    {
+        "Id": "95008",
+        "RegionId": "2",
+        "TerritoryDescription": "Campbell"
+    },
+    {
+        "Id": "95054",
+        "RegionId": "2",
+        "TerritoryDescription": "Santa Clara"
+    },
+    {
+        "Id": "95060",
+        "RegionId": "2",
+        "TerritoryDescription": "Santa Cruz"
+    },
+    {
+        "Id": "98004",
+        "RegionId": "2",
+        "TerritoryDescription": "Bellevue"
+    },
+    {
+        "Id": "98052",
+        "RegionId": "2",
+        "TerritoryDescription": "Redmond"
+    },
+    {
+        "Id": "98104",
+        "RegionId": "2",
+        "TerritoryDescription": "Seattle"
+    }
+]
